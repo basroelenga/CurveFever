@@ -6,6 +6,7 @@ import android.opengl.GLSurfaceView;
 import android.view.Display;
 import android.view.WindowManager;
 import bas.com.curve.renderer.OpenGLRenderer;
+import bas.com.curve.shaders.ShaderManager;
 
 public class Game {
 
@@ -44,6 +45,7 @@ public class Game {
 		System.out.println("Loading data");
 		
 		System.out.println("Constructing shaders");
+		ShaderManager.constructShaders(context);
 	}
 	
 	private void loop()
@@ -107,8 +109,8 @@ public class Game {
 				
 				e.printStackTrace();
 			}
-			
-			System.out.println("Is waiting");
 		}
+		
+		System.out.println("Threads synced");
 	}
 }

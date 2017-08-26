@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 import bas.com.curve.game.Game;
 import bas.com.curve.renderer.OpenGLRenderer;
+import bas.com.curve.shaders.ShaderManager;
 
 public class Main extends Activity {
 
@@ -128,6 +129,9 @@ public class Main extends Activity {
 		
 		super.onDestroy();
 		view.destroyDrawingCache();
+		
+		// Destroy shaders and fbo
+		ShaderManager.destroy();
 		
 		System.out.println("onDestroy called");
 	}
