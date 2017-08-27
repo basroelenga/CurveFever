@@ -13,6 +13,7 @@ import android.view.View;
 import bas.com.curve.game.Game;
 import bas.com.curve.renderer.OpenGLRenderer;
 import bas.com.curve.shaders.ShaderManager;
+import bas.com.curve.texture.TextureManager;
 
 public class Main extends Activity {
 
@@ -132,6 +133,7 @@ public class Main extends Activity {
 		
 		// Destroy shaders and fbo
 		ShaderManager.destroy();
+		TextureManager.destroy();
 		
 		System.out.println("onDestroy called");
 	}

@@ -49,9 +49,6 @@ public class Shader {
 		modelMatrixLoc = glGetUniformLocation(shaderProgram, "modelMatrix");	
 		viewMatrixLoc = glGetUniformLocation(shaderProgram, "viewMatrix");
 		projectionMatrixLoc = glGetUniformLocation(shaderProgram, "projectionMatrix");
-		
-		
-		
 	}
 	
 	private String loadShader(String type)

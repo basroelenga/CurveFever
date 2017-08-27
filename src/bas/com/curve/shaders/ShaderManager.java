@@ -10,6 +10,8 @@ public class ShaderManager {
 	private static ArrayList<Shader> shaderList = new ArrayList<Shader>();
 	private static ArrayList<String> nameList = new ArrayList<String>();
 	
+	private ShaderManager() {}
+	
 	public static void constructShaders(Context context)
 	{
 		
@@ -18,7 +20,6 @@ public class ShaderManager {
 			
 			// Get the names of all the shaders
 			String[] shaders = context.getAssets().list("shaders");
-			nameList = new ArrayList<String>();
 			
 			for(String shader : shaders)
 			{

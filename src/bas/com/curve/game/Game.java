@@ -7,6 +7,7 @@ import android.view.Display;
 import android.view.WindowManager;
 import bas.com.curve.renderer.OpenGLRenderer;
 import bas.com.curve.shaders.ShaderManager;
+import bas.com.curve.texture.TextureManager;
 
 public class Game {
 
@@ -43,6 +44,7 @@ public class Game {
 	{
 		
 		System.out.println("Loading data");
+		TextureManager.loadTextures(context);
 		
 		System.out.println("Constructing shaders");
 		ShaderManager.constructShaders(context);
