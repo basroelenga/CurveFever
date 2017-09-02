@@ -14,6 +14,8 @@ public class TextureManager {
 	public static void loadTextures(Context context)
 	{
 		
+		System.out.println("Loading textures");
+		
 		try 
 		{
 			
@@ -24,7 +26,7 @@ public class TextureManager {
 			{
 				
 				// Get the name of the texture
-				String name = texture.split(".")[0];
+				String name = texture.split("\\.")[0];
 				
 				// Construct the texture
 				textureList.add(new Texture(name, context));

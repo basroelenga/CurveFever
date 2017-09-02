@@ -4,6 +4,8 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 import android.opengl.GLSurfaceView.Renderer;
+import bas.com.curve.game.objects.GameObjectManager;
+import bas.com.curve.shaders.ShaderManager;
 
 import static android.opengl.GLES30.*;
 
@@ -39,7 +41,9 @@ public class OpenGLRenderer implements Renderer {
 		
 		// Clear the default framebuffer
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-				
+		
+		// Render all game objects
+		GameObjectManager.render();
 	}
 
 	public static boolean isOpenGLRendererCreated()

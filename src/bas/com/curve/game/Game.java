@@ -5,6 +5,7 @@ import android.content.Context;
 import android.opengl.GLSurfaceView;
 import android.view.Display;
 import android.view.WindowManager;
+import bas.com.curve.game.objects.GameObjectManager;
 import bas.com.curve.renderer.OpenGLRenderer;
 import bas.com.curve.shaders.ShaderManager;
 import bas.com.curve.texture.TextureManager;
@@ -70,6 +71,7 @@ public class Game {
 			timeStart = System.nanoTime();
 			
 			// Updating all logic
+			GameObjectManager.update();
 			
 			// After the update request a render
 			view.requestRender();
