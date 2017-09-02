@@ -17,7 +17,7 @@ import bas.com.curve.texture.TextureManager;
 
 public class Main extends Activity {
 
-	private Context context;
+	private static Context context;
 	private Activity activity;
 	
 	private GLSurfaceView view;
@@ -136,5 +136,10 @@ public class Main extends Activity {
 		TextureManager.destroy();
 		
 		System.out.println("onDestroy called");
+	}
+	
+	public static Context getContext()
+	{
+		return context;
 	}
 }

@@ -7,8 +7,6 @@ import android.view.Display;
 import android.view.WindowManager;
 import bas.com.curve.game.objects.GameObjectManager;
 import bas.com.curve.renderer.OpenGLRenderer;
-import bas.com.curve.shaders.ShaderManager;
-import bas.com.curve.texture.TextureManager;
 
 public class Game {
 
@@ -37,25 +35,11 @@ public class Game {
 		
 		this.view = view;
 		
-		load();
 		loop();
-	}
-	
-	private void load()
-	{
-		
-		System.out.println("Loading data");
-		TextureManager.loadTextures(context);
-		
-		System.out.println("Constructing shaders");
-		ShaderManager.constructShaders(context);
 	}
 	
 	private void loop()
 	{
-		
-		System.out.println("Starting game loop");
-		isRunning = true;
 		
 		// The loop will sync to the refresh rate of the screen
 		Display display = ((WindowManager) activity.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
@@ -63,6 +47,9 @@ public class Game {
 		
 		// The loop cannot start before the GLSurfaceView is created
 		waitForRenderThread();
+	
+		System.out.println("Starting game loop");
+		isRunning = true;
 		
 		while(isRunning)
 		{

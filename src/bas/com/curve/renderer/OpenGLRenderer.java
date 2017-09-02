@@ -4,8 +4,10 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 import android.opengl.GLSurfaceView.Renderer;
+import bas.com.curve.Main;
 import bas.com.curve.game.objects.GameObjectManager;
 import bas.com.curve.shaders.ShaderManager;
+import bas.com.curve.texture.TextureManager;
 
 import static android.opengl.GLES30.*;
 
@@ -24,6 +26,13 @@ public class OpenGLRenderer implements Renderer {
 		// Enable OpenGL stuff
 		glEnable(GL_DEPTH_TEST);
 		
+		// Create shaders and load textures
+		System.out.println("Constructing shaders");
+		ShaderManager.constructShaders(Main.getContext());
+		
+		System.out.println("Loading data");
+		TextureManager.loadTextures(Main.getContext());
+		
 		// Signal that the GLSurfaceView is created
 		isCreated = true;
 	}
@@ -33,7 +42,6 @@ public class OpenGLRenderer implements Renderer {
 		
 		// Change the viewport
 		glViewport(0, 0, width, height);
-		
 	}
 
 	@Override
